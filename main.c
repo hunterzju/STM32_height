@@ -6,7 +6,7 @@
 
 volatile u32 time = 0; // ms 计时变量 
 
-//hunter
+
 /**
   * @brief  主函数
   * @param  无  
