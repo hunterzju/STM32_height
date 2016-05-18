@@ -6,7 +6,6 @@
 
 volatile u32 time = 0; // ms 计时变量 
 
-//test
 /**
   * @brief  主函数
   * @param  无  
