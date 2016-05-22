@@ -171,8 +171,8 @@ void macEXTI_INT_FUNCTION (void)
 {
 	if(EXTI_GetITStatus(macEXTI_LINE) != RESET) 
 	{
-		macTIM_APBxClock_FUN (macTIM_CLK, ENABLE);
-		//echo_flag = 1;
+		//macTIM_APBxClock_FUN (macTIM_CLK, ENABLE);
+		echo_time = 0;
 		EXTI_ClearITPendingBit(macEXTI_LINE);     
 	}  
 }

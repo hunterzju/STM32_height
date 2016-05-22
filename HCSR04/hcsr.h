@@ -9,7 +9,7 @@
 #define     HCSR_Triger_Pin			GPIO_Pin_8								//Triger Pin->PB8
 #define     HCSR_Echo_Pin				GPIO_Pin_9								//Echo Pin->PB9
 
-void HCSR_Config(void);						//GPIO配置
+void HCSR_GPIO_Config(void);						//GPIO配置
 void Triger(void);						//发送测量信号
 float Calculation(void);			//计算距离函数
 
