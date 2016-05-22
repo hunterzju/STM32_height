@@ -10,7 +10,7 @@ void TIMx_NVIC_Configuration(void)
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);  													
     NVIC_InitStructure.NVIC_IRQChannel = macTIM_IRQ;	  
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;
-    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;	
+    NVIC_InitStructure.NVIC_IRQChannelSubPriority = 2;	
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
 }
@@ -41,8 +41,8 @@ void TIMx_Configuration(void)
 		// 开启TIMx_CLK,x[2,3,4,5],即内部时钟CK_INT=72M
     macTIM_APBxClock_FUN (macTIM_CLK, ENABLE);
 	
-		// 自动重装载寄存器周的值(计数值)
-    TIM_TimeBaseStructure.TIM_Period=1000;
+		// 自动重装载寄存器周的值(计数值) 10us
+    TIM_TimeBaseStructure.TIM_Period= 10;
 	
     // 累计 TIM_Period个频率后产生一个更新或者中断
 	  // 时钟预分频数为71，则驱动计数器的时钟CK_CNT = CK_INT / (71+1)=1M

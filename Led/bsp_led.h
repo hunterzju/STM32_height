@@ -10,13 +10,13 @@
 #define macLED1_GPIO_CLK 	    RCC_APB2Periph_GPIOB		/* GPIO端口时钟 */
 #define macLED1_GPIO_PIN		  GPIO_Pin_0			          /* 连接到SCL时钟线的GPIO */
 
-#define macLED2_GPIO_PORT    	GPIOF			              /* GPIO端口 */
-#define macLED2_GPIO_CLK 	    RCC_APB2Periph_GPIOF		/* GPIO端口时钟 */
-#define macLED2_GPIO_PIN		  GPIO_Pin_7			          /* 连接到SCL时钟线的GPIO */
+#define macLED2_GPIO_PORT    	GPIOB			              /* GPIO端口 */
+#define macLED2_GPIO_CLK 	    RCC_APB2Periph_GPIOB		/* GPIO端口时钟 */
+#define macLED2_GPIO_PIN		  GPIO_Pin_1			          /* 连接到SCL时钟线的GPIO */
 
-#define macLED3_GPIO_PORT    	GPIOF			              /* GPIO端口 */
-#define macLED3_GPIO_CLK 	    RCC_APB2Periph_GPIOF		/* GPIO端口时钟 */
-#define macLED3_GPIO_PIN		  GPIO_Pin_8			          /* 连接到SCL时钟线的GPIO */
+#define macLED3_GPIO_PORT    	GPIOB			              /* GPIO端口 */
+#define macLED3_GPIO_CLK 	    RCC_APB2Periph_GPIOB		/* GPIO端口时钟 */
+#define macLED3_GPIO_PIN		  GPIO_Pin_5			          /* 连接到SCL时钟线的GPIO */
 
 
 /** the macro definition to trigger the led on or off 

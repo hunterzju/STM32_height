@@ -26,9 +26,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
 #include "bsp_TiMbase.h"
+#include "bsp_exti.h"
 
-
-extern volatile u32 time;
+extern volatile u32 echo_time; 
+extern volatile u32 triger_time;
 
 
 /** @addtogroup STM32F10x_StdPeriph_Template
@@ -159,10 +160,24 @@ void  macTIM_INT_FUN (void)
 {
 	if ( TIM_GetITStatus( macTIMx, TIM_IT_Update) != RESET ) 
 	{	
-		time++;
+		triger_time++;
+		echo_time++;
 		TIM_ClearITPendingBit(macTIMx , TIM_FLAG_Update);  		 
 	}		 	
 }
+
+///IO线中断，线中断连接PB9
+void macEXTI_INT_FUNCTION (void)
+{
+	if(EXTI_GetITStatus(macEXTI_LINE) != RESET) 
+	{
+		//macTIM_APBxClock_FUN (macTIM_CLK, ENABLE);
+		echo_time = 0;
+		EXTI_ClearITPendingBit(macEXTI_LINE);     
+	}  
+}
+
+
 
 /**
   * @brief  This function handles PPP interrupt request.
