@@ -42,13 +42,14 @@ int main(void)
 	
 	/* 配置通用定时器 TIMx,x[2,3,4,5]的中断优先级 */
 	TIMx_NVIC_Configuration();
-	macTIM_APBxClock_FUN (macTIM_CLK, ENABLE);
 	
 	LCD_Init ();         //LCD ???
 	
-  ILI9341_GramScan ( 1 );
-  ILI9341_Clear ( 0, 0, 240, 320, macBACKGROUND);
+  ILI9341_GramScan ( 2 );
+  ILI9341_Clear ( 0, 0, 320, 240, macBACKGROUND);
 	ILI9341_DispChar_EN ( 60, 60, 'A', macBACKGROUND, macRED );
+	
+	macTIM_APBxClock_FUN (macTIM_CLK, ENABLE);
 	
   while(1)
   {

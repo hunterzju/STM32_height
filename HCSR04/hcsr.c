@@ -6,7 +6,6 @@ extern volatile u32 triger_time;
 extern volatile u32 echo_time; 
 extern u32 distance_time;
 
-float distance;
 
 /*				function					*/
 void HCSR_GPIO_Config()
@@ -44,11 +43,13 @@ void Triger()
 
 float Calculation()
 {
-	distance = distance_time/100000 * 340.0 / 2;
+	float distance;
+	
+	distance = (float)distance_time/100000.0 * 340.0 / 2.0;
 	if(distance_time>12&&distance_time<1176)				//测量精度2cm以上，小于1.5m表示有身高
 	{
-		//distance = 2.0 - distance_time/1000000 * 340.0 / 2;
-		distance = distance_time/100000 * 340.0 / 2;
+		distance = 2.0 - (float)distance_time/100000.0 * 340.0 / 2.0;
+		//distance = distance_time/100000 * 340.0 / 2;
 	}
 	else
 	{
